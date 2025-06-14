@@ -56,6 +56,19 @@ On peut utilisater la méthode close des sockets.
 
 Quels sont les risques d'utiliser eval ?
 
-En utilisant eval, le serveur execute le code qu'on lui donne ce qui est très dangereux car l'utilisateur peut accéder à la machine et faire ce qu'il veut dessus.
+En utilisant eval, le serveur execute le code donné par l'utilisateur, ce qui est une très mauvaise idée. En effet, cela pose un problème de sécurité car l'utilisateur peut accéder à la machine et y faire ce qu'il veut grâce à des librairies Python comme os ou subprocess.
 
 Comment renvoyer une erreur sans faire planter le serveur ?
+
+On peut utiliser une structure try catch.
+
+### Etape 6
+
+Pourquoi structurer les messages avec /commande ?
+
+Cela permet au serveur de proposer plusieurs services selon la commande utilisée. De plus, si toutes les commandes ont la même structure,
+cela en facilite le traitement.
+
+Comment distinguer facilement les types de messages côté serveur ?
+
+On peut utiliser la partie du message qui spécifie la commande.
